@@ -1,6 +1,6 @@
-import os
 from dinjectorr import inject, Injector
 from openai import OpenAI
+from aisolutions.config import OPENAI_API_KEY
 
 
 class OpenAIClient(OpenAI):
@@ -9,4 +9,4 @@ class OpenAIClient(OpenAI):
         super().__init__(*args, **kwargs)
 
 
-Injector.register(OpenAIClient, api_key=os.getenv("OPENAI_API_KEY"))
+Injector.register(OpenAIClient, api_key=OPENAI_API_KEY)
