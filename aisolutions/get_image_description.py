@@ -6,8 +6,8 @@ from aisolutions.open_ai_client import OpenAIClient
 class GetImageDescription:
     @dataclass(frozen=True)
     class Request:
-        prompt: str
         image_url_or_base64: str
+        prompt: str = "What is on the image?"
         model: str = "gpt-4o"
         max_tokens: int = 300
         is_base64: bool = False
